@@ -1,0 +1,37 @@
+#DNA Toolkit file
+
+Nucleotides = ["A", "C", "G", "T"]
+
+#Check the sequence to make sure it is a DNA string
+def validateSeq(dna_seq):
+    tmpseq = dna_seq.upper()
+    for nuc in tmpseq:
+        if nuc not in Nucleotides:
+            return False 
+        
+    return tmpseq
+------------------------------------------------------------
+from DNAToolkit import *
+
+rndDNAStr = "ATTGGACX"
+
+print(validateSeq(rndDNAStr))
+-----------------------------------------------------------
+from DNAToolkit import *
+import random
+
+#Creating a random DNA sequence for testing:
+rndDNAStr = ''.join([random.choice(Nucleotides)
+                      for nuc in range (20)])  
+
+print(validateSeq(rndDNAStr))
+----------------------------------------------------------
+from DNAToolkit import *
+import random
+
+#Creating a random DNA sequence for testing:
+rndDNAStr = ''.join([random.choice(Nucleotides)
+                      for nuc in range (50)])  
+
+print(validateSeq(rndDNAStr))
+print(countNucFrequency(rndDNAStr))
